@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modern Tic-Tac-Toe</title>
+    <link rel="stylesheet" href="TIC-TAC.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  </head>
+  <body>
+    <!-- Game Over Modal -->
+    <div class="modal-overlay hide" id="modalOverlay">
+      <div class="modal">
+        <div class="modal-content">
+          <div class="winner-icon">
+            <i class="fas fa-trophy"></i>
+          </div>
+          <h2 id="modalTitle">Winner!</h2>
+          <p id="modalMessage">Player X wins!</p>
+          <div class="modal-buttons">
+            <button id="new-btn" class="btn btn-primary">
+              <i class="fas fa-play"></i> New Game
+            </button>
+            <button id="home-btn" class="btn btn-secondary">
+              <i class="fas fa-home"></i> Home
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="game-container">
+      <!-- Header -->
+      <header class="game-header">
+        <h1 class="game-title">
+          <i class="fas fa-gamepad"></i>
+          Tic Tac Toe
+        </h1>
+        <div class="game-info">
+          <div class="turn-indicator">
+            <span class="turn-label">Current Turn:</span>
+            <div class="player-turn" id="currentTurn">
+              <i class="fas fa-circle"></i>
+              <span>Player O</span>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- Score Board -->
+      <div class="score-board">
+        <div class="score-card player-x">
+          <div class="player-icon">
+            <i class="fas fa-times"></i>
+          </div>
+          <div class="player-info">
+            <h3>Player X</h3>
+            <span class="score" id="scoreX">0</span>
+          </div>
+        </div>
+        <div class="score-card player-o">
+          <div class="player-icon">
+            <i class="fas fa-circle"></i>
+          </div>
+          <div class="player-info">
+            <h3>Player O</h3>
+            <span class="score" id="scoreO">0</span>
+          </div>
+        </div>
+        <div class="score-card draws">
+          <div class="player-icon">
+            <i class="fas fa-handshake"></i>
+          </div>
+          <div class="player-info">
+            <h3>Draws</h3>
+            <span class="score" id="scoreDraws">0</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Game Board -->
+      <main class="game-main">
+        <div class="game-board">
+          <div class="board-grid">
+            <button class="box" data-index="0"></button>
+            <button class="box" data-index="1"></button>
+            <button class="box" data-index="2"></button>
+            <button class="box" data-index="3"></button>
+            <button class="box" data-index="4"></button>
+            <button class="box" data-index="5"></button>
+            <button class="box" data-index="6"></button>
+            <button class="box" data-index="7"></button>
+            <button class="box" data-index="8"></button>
+          </div>
+        </div>
+      </main>
+
+      <!-- Game Controls -->
+      <div class="game-controls">
+        <button id="reset-btn" class="btn btn-reset">
+          <i class="fas fa-redo"></i> Reset Game
+        </button>
+        <button id="undo-btn" class="btn btn-undo" disabled>
+          <i class="fas fa-undo"></i> Undo
+        </button>
+        <button id="hint-btn" class="btn btn-hint">
+          <i class="fas fa-lightbulb"></i> Hint
+        </button>
+      </div>
+
+      <!-- Game Stats -->
+      <div class="game-stats">
+        <div class="stat-item">
+          <span class="stat-label">Games Played:</span>
+          <span class="stat-value" id="gamesPlayed">0</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-label">Win Rate:</span>
+          <span class="stat-value" id="winRate">0%</span>
+        </div>
+      </div>
+    </div>
+
+    <script src="TIC-TAC.js"></script>
+  </body>
+</html>
